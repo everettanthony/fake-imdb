@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h1 {
+      @apply text-2xl font-bold mb-5 dark:text-[#f5c518] text-white;
+
+      span {
+        @apply text-sm font-normal text-white;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        @apply mb-5;
+      }
+    }
+
+    button {
+      @apply text-[#000] font-bold bg-[#f5c518] py-1 px-2 
+        rounded transition-colors duration-300 hover:bg-[#ebbd1a];
+    }
+}
+
+.logo {
+    font-family: "Roboto Condensed";
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #f5c518;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: 10px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

@@ -1,0 +1,13 @@
+@layer components {
+    .movies {
+        @apply select-none sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-6xl mx-auto py-4;
+    }
+
+    .movie {
+        @apply font-['Roboto'] overflow-hidden cursor-pointer rounded-md dark:bg-[#1a1a1a] bg-[#414141];
+
+        &-link {
+            @apply flex flex-col h-full;
+        }
+    }
+}
