@@ -1,5 +1,4 @@
-import { Suspense } from "react";
-import Loading from "./loading";
+export const dynamic = "force-dynamic";
 import MovieList from "@/components/movieList";
 
 export default async function Home({ searchParams }) {
@@ -9,7 +8,7 @@ export default async function Home({ searchParams }) {
       accept: 'application/json',
       Authorization: `Bearer ${process.env.API_TOKEN}`
     },
-    // next: { revalidate: 86400 }
+    next: { revalidate: 86400 }
   });
 
   if (!res.ok) {
@@ -28,9 +27,7 @@ export default async function Home({ searchParams }) {
   return (
       <div>
         <h1>{subTitles[`${genre}`]}</h1>
-          <Suspense fallback={<Loading />}>
-            <MovieList movies={movies} />
-          </Suspense>
+          <MovieList movies={movies} />
       </div>
   )
 }
